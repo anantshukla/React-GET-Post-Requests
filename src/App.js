@@ -16,6 +16,14 @@ export class App extends React.Component {
 
   handleGETSubmit(event){
     event.preventDefault();
+    
+    console.logCookies.get('csrftoken')
+    //let formdata = new FormData()
+    //formdata.append("csrfmiddlewaretoken", Cookies.get('csrftoken'))
+    //formdata.append("username", this.state.username)
+    //formdata.append("password", this.state.password)
+    //formdata.append("api", "true")
+
     axios({
       url: 'login/',
       method: 'GET',
@@ -25,6 +33,7 @@ export class App extends React.Component {
         Sample: 'Sample'
       },
       data: "HiParryThisisFormData"
+      //data: formdata
     })
     .then((response) => {
       console.log(response.data);
@@ -33,12 +42,7 @@ export class App extends React.Component {
       console.log("error GET Request");
     })
 
-    console.logCookies.get('csrftoken')
-    //let formdata = new FormData()
-    //formdata.append("csrfmiddlewaretoken", Cookies.get('csrftoken'))
-    //formdata.append("username", this.state.username)
-    //formdata.append("password", this.state.password)
-    //formdata.append("api", "true")
+
   }
 
 
