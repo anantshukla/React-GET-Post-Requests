@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import axios from "axios";
+import Cookies from 'js-cookie';
 
 export class App extends React.Component {
   constructor(props) {
@@ -31,6 +32,13 @@ export class App extends React.Component {
     .catch((error) => {
       console.log("error GET Request");
     })
+
+    console.logCookies.get('csrftoken')
+    //let formdata = new FormData()
+    //formdata.append("csrfmiddlewaretoken", Cookies.get('csrftoken'))
+    //formdata.append("username", this.state.username)
+    //formdata.append("password", this.state.password)
+    //formdata.append("api", "true")
   }
 
 
